@@ -2,7 +2,6 @@ const nithLogo = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701156/
 import { Link,NavLink, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Notifications from '../helpers/Notifications'
-import { useEffect, useState } from 'react'
 import { authAction } from '../../store/auth'
 import Message from '../helpers/Message'
 

@@ -13,7 +13,7 @@ const CreateTeam = () => {
     name: "",
     emailOfPlayers: [],
     notp: 2,
-    type: "",
+    type: "cricket",
     letApply:'no'
   });
   const [emailOfOnePlayer, setEmailOfOnePlayer] = useState("");
@@ -127,11 +127,14 @@ const CreateTeam = () => {
             placeholder="Name"
             onChange={typeHandler}
           >
-            <option value=''></option>
-            <option value="cricket">cricket</option>
-            <option value="football">football</option>
-            <option value="chess">chess</option>
-            <option value="vollyball">vollyball</option>
+                        <option value='cricket' className=' bg-[#c98bf5]' >cricket</option>
+                        <option value='football' className=' bg-[#c98bf5]'>football</option>
+                        <option value='chess' className=' bg-[#c98bf5]'>chess</option>
+                        <option value='vollyball' className=' bg-[#c98bf5]' >vollyball</option>
+                        <option value='tennis' className=' bg-[#c98bf5]' >tennis</option>
+                        <option value='basketball' className=' bg-[#c98bf5]' >basketball</option>
+                        <option value='badminton' className=' bg-[#c98bf5]' >badminton</option>
+                  
           </select>
 
           <input

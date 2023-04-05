@@ -17,7 +17,7 @@ const GameCard = ({ team }) => {
 
     const applyHandler = async(id)=>{
 
-        console.log(id)
+       
         try {
           dispatch(notificationAction.setFunction({functionMessage:`sending your request to ${team?.teamLeader?.name}`}))
           const token = localStorage.getItem('token')

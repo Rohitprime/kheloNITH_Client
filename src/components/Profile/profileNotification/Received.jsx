@@ -14,12 +14,17 @@ const Received = ({ notis }) => {
        const {name} = e.target
        const id= name
        try {
+        dispatch(notificationAction.setFunction({functionMessage:'rejecting challenge'}))
             const res = await axios.get(`${backendURl}/kheloNITH/notification/event/reject/${id}`)
             dispatch(notificationAction.setNotification({type:'error',message:res.data.message}))
             dispatch(profileAction.setReRun())
+            dispatch(notificationAction.setDontFunction())
+
        } 
        catch (error) {
         dispatch(notificationAction.setNotification({type:'error',message:error.message}))
+        dispatch(notificationAction.setDontFunction())
+
        }
     }
 
@@ -27,13 +32,16 @@ const Received = ({ notis }) => {
         const {name} = e.target
         const id= name
         try {
+             dispatch(notificationAction.setFunction({functionMessage:'accepting challenge'}))
              const res = await axios.get(`${backendURl}/kheloNITH/notification/event/accept/${id}`)
              dispatch(notificationAction.setNotification({type:'success',message:res.data.message}))
              dispatch(profileAction.setReRun())
-
+             dispatch(notificationAction.setDontFunction())
         } 
         catch (error) {
          dispatch(notificationAction.setNotification({type:'error',message:error.message}))
+         dispatch(notificationAction.setDontFunction())
+
         }
     }
 

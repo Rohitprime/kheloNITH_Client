@@ -1,18 +1,22 @@
 
 const homeImage = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701161/kheloNIT/homebg_pwuade.png'
+import mbg from '../../assets/test/mbg.png'
 
 const Home = () => {
     return (
         <div className=' w-screen h-screen flex flex-col md:flex-row bg-gradient-to-br from-[#6e3ba4] to-[#493852]
-          md:mt-0 mt-[150px]'>
+          md:mt-0 mt-[150px] relative'>
+            <div className="w-full absolute opacity-30  ">
+                   <img src={mbg} className='w-full h-[300px] md:h-screen'/>
+            </div>
             <div className="w-full md:w-5/12 md:h-full h-[200px] flex justify-center md:justify-end items-center  md:ml-16
-               mt-10">
+               mt-10 backdrop-blur-sm">
                 <img src={homeImage} className="md:w-[1200px] md:h-[560px] w-[250px] h-[250px]" />
             </div>
-            <div className='w-full md:w-7/12 h-full flex flex-col z-[1] backdrop-blur-lg
+            <div className='w-full md:w-7/12 h-full flex flex-col z-[1] backdrop-blur-sm
              animate-slidedown   items-center mt-[70px]' >
                 <h1 className='md:text-[150px] font-bold bg-clip-text  md:mt-[100px] text-transparent bg-gradient-to-br from-[#ce6d30] to-[#c3a041]
-                   text-[70px] text-center '>KheloNITH</h1>
+                   text-[70px] text-center  '>KheloNITH</h1>
                <h1 className=' font-bold text-white md:text-2xl text-xl ml-[250px] p-1'> BE A PART OF THE <b className='text-[#ff1515]'>GAME</b>  </h1> 
               
                <div className='w-full md:w-7/12 h-[300px] mt-10 rounded-3xl opacity-75 flex flex-wrap p-4'>

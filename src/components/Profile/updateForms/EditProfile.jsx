@@ -37,7 +37,6 @@ const EditProfile = () => {
             return
         }
         const file = files[0]
-        console.log(file.File)
         const avtarUrl = await converToBase64(file)
         setUser({...user,newAvtar:avtarUrl})
     }
@@ -55,14 +54,13 @@ const EditProfile = () => {
             return;
           }
       
-        dispatch(notificationAction.setFunction({functionMessage:'updating Profile...'}))
+        dispatch(notificationAction.setFunction({functionMessage:'updating Profile'}))
 
          try {
              const res =await axios.post(`${backendURl}/kheloNITH/profile/edit`,{user})
              if(res.data.error){
                 dispatch(notificationAction.setNotification({type:'error',message:'somthing went wrong ! try again'}))
                 dispatch(notificationAction.setDontFunction())
-                console.log(res.data.error)
                 return
              }
              dispatch(notificationAction.setNotification({type:'success',message:res.data.message}))
@@ -70,7 +68,6 @@ const EditProfile = () => {
 
              dispatch(profileAction.setReRun())
          } catch (error) {
-            console.log(error.message)
             dispatch(notificationAction.setNotification({type:'error',message:res.data.error}))
                             dispatch(notificationAction.setDontFunction())
 

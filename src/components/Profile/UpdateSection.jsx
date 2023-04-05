@@ -10,7 +10,7 @@ const UpdateSection =()=>{
     const array = updateQuery.split('-')
     const id= array[1]
     const updateFor = array[0]
-    console.log(id,updateFor)
+   
 
 
     return(

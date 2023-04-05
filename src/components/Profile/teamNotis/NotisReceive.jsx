@@ -15,12 +15,15 @@ const NotisReceive = ({ notis }) => {
        const {name} = e.target
        const id= name
        try {
+            dispatch(notificationAction.setFunction({functionMessage:'rejecting the request'}))
             const res = await axios.get(`${backendURl}/kheloNITH/notification/team/reject/${id}`)
             dispatch(notificationAction.setNotification({type:'error',message:res.data.message}))
             dispatch(profileAction.setReRun())
+            dispatch(notificationAction.setDontFunction())
        } 
        catch (error) {
         dispatch(notificationAction.setNotification({type:'error',message:error.message}))
+        dispatch(notificationAction.setDontFunction())
        }
     }
 
@@ -28,13 +31,16 @@ const NotisReceive = ({ notis }) => {
         const {name} = e.target
         const id= name
         try {
+            dispatch(notificationAction.setFunction({functionMessage:'accepting the request'}))
              const res = await axios.get(`${backendURl}/kheloNITH/notification/team/accept/${id}`)
              dispatch(notificationAction.setNotification({type:'success',message:res.data.message}))
              dispatch(profileAction.setReRun())
+             dispatch(notificationAction.setDontFunction())
 
         } 
         catch (error) {
          dispatch(notificationAction.setNotification({type:'error',message:error.message}))
+         dispatch(notificationAction.setDontFunction())
         }
     }
 

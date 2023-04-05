@@ -19,7 +19,7 @@ const Sports = () => {
          axios.get(`${backendURl}/kheloNITH/team/getTeams`)
         .then((res)=>{
             dispatch(sportsAction.setSportsTeams(res.data.teams))
-            console.log(res.data.teams)
+          
             dispatch(notificationAction.setDontFunction())
         })
         .catch((e)=>{console.log(e.message)})

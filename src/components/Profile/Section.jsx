@@ -11,7 +11,7 @@ import TeamNotis from "./teamNotis/TeamNotis"
 const Section =()=>{
 
     const {query='genral'} = useParams()
-    console.log(query)
+   
     return(
         <>
         { query=='createEvents' && <CreateEvents/>}   

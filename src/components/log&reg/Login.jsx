@@ -65,7 +65,7 @@ const Login = () => {
             </div>
             <div className='w-full h-full  absolute flex flex-col justify-center items-center z-[1] backdrop-blur-sm opacity-70
             bg-gradient-to-b from-[#200133] to-black' >
-                <form className='w-11/12 sm:w-4/12 h-[550px] bg-gradient-to-b from-[#e9cdf6] to-[#000000] opacity-90 backdrop-blur-2xl rounded-3xl mt-[50px] 
+                <form className='w-11/12 md:w-4/12 h-[550px] bg-gradient-to-b from-[#e9cdf6] to-[#000000] opacity-90 backdrop-blur-2xl rounded-3xl mt-[50px] 
                 animate-slideup flex flex-col items-center shadow-2xl' onSubmit={submintHandler}>
                     <h1 className='font-bold text-[40px] text-[#33104b] mt-[50px] font-serif'>Login</h1>
 

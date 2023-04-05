@@ -10,7 +10,7 @@ import backendURl from '../helpers/backendUrl'
 const CreateEvents = () => {
 
     const dispatch = useDispatch()
-    const [event, setevent] = useState({ type: '', date: null, time: null })
+    const [event, setevent] = useState({ type: 'cricket', date: null, time: null })
     const [eventError, seteventError] = useState({ etype: false, edate: false, etime: false })
     
 
@@ -93,21 +93,22 @@ const CreateEvents = () => {
     return (
         <div className='w-full h-full'>
             <div className='w-full h-full flex flex-col  items-center z-[1] backdrop-blur-sm opacity-100 shadow-lg justify-center
-            ' >
+             mt-5' >
 
                 <form className='w-11/12 md:w-5/12  bg-gradient-to-b from-[#d577fd] to-[#dfe5eb] opacity-100 backdrop-blur-2xl rounded-3xl
                 animate-slideup flex flex-col items-center shadow-2xl ' onSubmit={submintHandler}>
-                    <h1 className='font-bold text-[50px] text-[#062147] mt-[15px] font-serif'>Create Event</h1>
+                    <h1 className='font-bold text-[40px] md:text-[50px] text-[#062147] mt-[15px] font-serif'>Create Event</h1>
 
                     <select type='' className={`w-9/12 h-[55px]  mt-[10px] text-start shadow-xl font-bold text-2xl focus:outline-none
                     border-b-[5px] text-black bg-transparent  ${eventError.etype && 'border-b-8 border-b-rose-900 placeholder-rose-900'}`} placeholder='Name'
                         onChange={typeHandler}>
-                        <option value=' ' className=' bg-[#c98bf5]'></option>
                         <option value='cricket' className=' bg-[#c98bf5]' >cricket</option>
                         <option value='football' className=' bg-[#c98bf5]'>football</option>
                         <option value='chess' className=' bg-[#c98bf5]'>chess</option>
                         <option value='vollyball' className=' bg-[#c98bf5]' >vollyball</option>
-
+                        <option value='tennis' className=' bg-[#c98bf5]' >tennis</option>
+                        <option value='basketball' className=' bg-[#c98bf5]' >basketball</option>
+                        <option value='badminton' className=' bg-[#c98bf5]' >badminton</option>
                     </select>
 
                     <input type='date' className={`w-9/12 h-[55px]  mt-[10px] text-start shadow-xl font-bold text-2xl focus:outline-none

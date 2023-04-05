@@ -1,6 +1,6 @@
 
 const profile1 = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { notificationAction } from '../../store/notfications'
@@ -10,7 +10,6 @@ const EventCard = ({ event }) => {
 
 
    const dispatch = useDispatch()
-   const navigate = useNavigate()
    
    const applyHandler = async(e)=>{
     
@@ -19,7 +18,6 @@ const EventCard = ({ event }) => {
       try {
           const token = await localStorage.getItem('token')
           const res =await axios.post(`${backendURl}/kheloNITH/notifications/event/apply`,{id:name,token})
-          console.log(res.data)
           if(res.data.error){
              dispatch(notificationAction.setNotification({type:'error',message:res.data.error}))
              dispatch(notificationAction.setDontFunction())
@@ -30,8 +28,8 @@ const EventCard = ({ event }) => {
 
       } 
       catch (error) {
-         console.log(error.message)
          dispatch(notificationAction.setDontFunction())
+         dispatch(notificationAction.setNotification({type:'error',message:'something went wrong! Please try again'}))
 
       }
    }

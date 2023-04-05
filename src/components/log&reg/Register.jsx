@@ -43,9 +43,9 @@ const Register = () => {
             return
         }
         const file = files[0]
-        console.log(file.File)
+       
         const avtarUrl = await converToBase64(file)
-        console.log(avtarUrl)
+      
         setUser({...user,avtar:avtarUrl})
     }
 
@@ -71,11 +71,11 @@ const Register = () => {
             setUserError({...userError,enumber:true})
             return;
           }
-         console.log(user)
+       
          dispatch(notificationAction.setFunction({functionMessage:'Registering...'}))
          try {
              const res =await axios.post(`${backendURl}/kheloNITH/register`,user)
-             console.log(res.data)
+            
              if(res.data.error){
                 dispatch(notificationAction.setNotification({type:'error',message:res.data.error}))
                 dispatch(notificationAction.setDontFunction())

@@ -1,5 +1,5 @@
 
-const backendURl =  'https://sparkling-pig-lab-coat.cyclic.app'
+const backendURl =  'https://khelonith-server-yyca.onrender.com'
 
 
 // 'http://localhost:3000'

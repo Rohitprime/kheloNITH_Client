@@ -1,11 +1,8 @@
 import EventCard from "./EventCard"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import Loading from "../loading/Loading"
-import axios from "axios"
-import { useDispatch, useSelector } from "react-redux"
-import { notificationAction } from "../../store/notfications"
-import { eventsAction } from "../../store/event"
+import {  useState } from "react"
+import { useSelector } from "react-redux"
+
 
 const SportEvents = () => {
 

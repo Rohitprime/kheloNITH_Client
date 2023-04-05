@@ -1,12 +1,6 @@
 
 import SportCard from "./SportCard"
-import cricket from '../../assets/sports/cricket.png'
-import football from '../../assets/sports/football.png'
-import vollyball from '../../assets/sports/vollyball.png'
-import chess from '../../assets/sports/chess.png'
-import badminton from '../../assets/sports/badminton.png'
-import tenish from '../../assets/sports/tenish.png'
-import basketball from '../../assets/sports/basketball.png'
+import { cricket,football,vollyball,chess,badminton,basketball,tenish } from "../../assets/sportTeams/sportImages"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
@@ -21,7 +15,7 @@ const Sports = () => {
     
     useEffect(()=>{
         
-        dispatch(notificationAction.setFunction({functionMessage:'Loading...'}))
+        dispatch(notificationAction.setFunction({functionMessage:''}))
          axios.get(`${backendURl}/kheloNITH/team/getTeams`)
         .then((res)=>{
             dispatch(sportsAction.setSportsTeams(res.data.teams))
@@ -37,7 +31,7 @@ const Sports = () => {
         <div className="bg-gradient-to-br from-[#2e1148] to-[#280334] flex overflow-y-scroll h-screen scrollbar-hide justify-center">
             <div className="w-9/12 h-screen px-5 p-3 flex flex-wrap gap-16 justify-center">
                 <div className="w-screen h-[80px]"></div>
-                <SportCard sport={'cricket'} logo={cricket} />
+                <SportCard sport={'cricket'} logo={cricket}/>
                 <SportCard sport={'football'} logo={football} />
                 <SportCard sport={'vollyball'} logo={vollyball} />
                 <SportCard sport={'badminton'} logo={badminton} />

@@ -16,7 +16,7 @@ const Events = () => {
     const events = useSelector(state=>state.events.events)
 
     useEffect(() => {
-        dispatch(notificationAction.setFunction({functionMessage:'Loading...'}))
+        dispatch(notificationAction.setFunction({functionMessage:''}))
         axios.get(`${backendURl}/kheloNITH/getSportEvents`)
             .then((res) => {
                 const arr = res.data.events

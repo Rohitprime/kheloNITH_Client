@@ -1,4 +1,4 @@
-import nithLogo from '../../assets/nithLogo.png'
+const nithLogo = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701156/kheloNIT/nithLogo_zn4tot.png'
 import { Link,NavLink, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Notifications from '../helpers/Notifications'
@@ -24,7 +24,7 @@ const Navbar = ()=>{
   }
 
     return (
-      <div className="w-screen h-[150px] md:h-[80px] flex flex-col md:flex-row  absolute top-0 opacity-90  bg-gradient-to-b from-[#1e023d] to-[#513f60] z-[5]
+      <div className="w-screen h-[150px] md:h-[80px] flex flex-col md:flex-row  absolute top-0  bg-gradient-to-b from-[#1e023d] to-[#513f60] z-[5]
       shadow-lg shadow-white/60  md:pb-0 pb-2">
        {available && <Notifications/>}
        {functioning && <Message/>}

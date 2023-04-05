@@ -1,16 +1,8 @@
 
 import { useParams } from "react-router-dom"
-import SportCard from "./SportCard"
-import cricket from '../../assets/sports/cricket.png'
-import football from '../../assets/sports/football.png'
-import vollyball from '../../assets/sports/vollyball.png'
-import chess from '../../assets/sports/chess.png'
-import badminton from '../../assets/sports/badminton.png'
-import tenish from '../../assets/sports/tenish.png'
-import basketball from '../../assets/sports/basketball.png'
+import { cricket,football,vollyball,chess,badminton,basketball,tenish } from "../../assets/sportTeams/sportImages"
 import GameCard from "./GameCard"
 import { useSelector } from "react-redux"
-import { useEffect } from "react"
 
 
 const SportMain = ()=>{
@@ -19,7 +11,6 @@ const SportMain = ()=>{
    
     
 
-    console.log(sportsTeams)
     
     return(
         <div className='relative w-screen h-screen mt-[150px] md:mt-[81px]'>

@@ -1,9 +1,7 @@
 
 import { BsFillPersonPlusFill } from 'react-icons/bs'
-import { GiCricketBat } from 'react-icons/gi'
-import { BiCricketBall } from 'react-icons/bi'
-import playerPng from '../../assets/dummy/player.png'
-import captain from '../../assets/dummy/captain.png'
+const playerPng ='https://res.cloudinary.com/diszakm5s/image/upload/v1680701313/kheloNIT/dummy/player_waaj5n.png' 
+const captain = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
 import { Link,NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'

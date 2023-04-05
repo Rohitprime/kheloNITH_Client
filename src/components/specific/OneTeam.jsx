@@ -1,13 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams,Link } from "react-router-dom"
-import cricket from '../../assets/sports/cricket.png'
-import football from '../../assets/sports/football.png'
-import vollyball from '../../assets/sports/vollyball.png'
-import chess from '../../assets/sports/chess.png'
-import badminton from '../../assets/sports/badminton.png'
-import tenish from '../../assets/sports/tenish.png'
-import basketball from '../../assets/sports/basketball.png'
+import { cricket,football,vollyball,chess,badminton,basketball,tenish } from "../../assets/sportTeams/sportImages"
 import GameCard from "../sports/GameCard"
 import backendURl from "../helpers/backendUrl"
 

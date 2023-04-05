@@ -1,6 +1,3 @@
-import bg from '../../assets/events/bg1.png'
-import ece from '../../assets/dummy/ece.png'
-import cse from '../../assets/dummy/cse.png'
 
 const UpcomingEvents = ({ eventName = "InterBranch", place = "SportGround", time = '10:30', sportType='Cricket' }) => {
     return (

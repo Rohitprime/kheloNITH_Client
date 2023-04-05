@@ -1,7 +1,7 @@
 
-import events from '../../../assets/dummy/events.png'
-import team from '../../../assets/dummy/team.png'
-import inTeam from '../../../assets/dummy/inTeams.png'
+const events = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701325/kheloNIT/dummy/events_el9oco.png'
+const team  = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701333/kheloNIT/dummy/team_aob7kw.png'
+const inTeam = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701324/kheloNIT/dummy/inTeams_usdc5y.png'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'

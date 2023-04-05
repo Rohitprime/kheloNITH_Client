@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import profile from '../../assets/dummy/captain.png'
+const profile = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
 import Navbar from "../navbar/Navbar"
 import { Link } from "react-router-dom"
 import backendURl from "../helpers/backendUrl"

@@ -1,4 +1,4 @@
-import bg from '../../assets/bg/bg6.png'
+const bg = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701916/kheloNIT/dummy/bg6_llipum.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 import { authAction } from '../../store/auth'

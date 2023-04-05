@@ -1,5 +1,5 @@
 
-import sports from '../../assets/homebg.png'
+const homeImage = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701161/kheloNIT/homebg_pwuade.png'
 
 const Home = () => {
     return (
@@ -7,7 +7,7 @@ const Home = () => {
           md:mt-0 mt-[150px]'>
             <div className="w-full md:w-5/12 md:h-full h-[200px] flex justify-center md:justify-end items-center  md:ml-16
                mt-10">
-                <img src={sports} className="md:w-[1200px] md:h-[560px] w-[250px] h-[250px]" />
+                <img src={homeImage} className="md:w-[1200px] md:h-[560px] w-[250px] h-[250px]" />
             </div>
             <div className='w-full md:w-7/12 h-full flex flex-col z-[1] backdrop-blur-lg
              animate-slidedown   items-center mt-[70px]' >

@@ -1,7 +1,7 @@
 import Navbar from "../navbar/Navbar"
 import { Outlet, NavLink } from "react-router-dom"
-import profileCover from '../../assets/dashBoard/profileCover.png'
-import profile from '../../assets/dummy/captain.png'
+const profileCover = ''
+const profile = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
 import abg from '../../assets/dashBoard/abg1.png'
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -22,7 +22,7 @@ const ProfileLayout = () => {
     useEffect(() => {
         
         if(firstTime){
-            dispatch(notificationAction.setFunction({functionMessage:'Verifing..'}))
+            dispatch(notificationAction.setFunction({functionMessage:'profile'}))
             firstTime=false
             console.log(firstTime)
         }
@@ -64,11 +64,11 @@ const ProfileLayout = () => {
                     <div className="w-full md:w-3/12 h-screen  flex flex-col gap-1 ">
                         <div className="bg-gradient-to-br from-[#32104b]">
                             <div className="w-full h-[250px] bg-white/10 relative animate-slidedown">
-                                <div className="w-full h-full  flex items-center absolute">
+                                {/* <div className="w-full h-full  flex items-center absolute">
                                     <img src={profileCover} className="md:w-[170px] md:h-[170px] w-[140px] h-[140px] ml-3" />
-                                </div>
+                                </div> */}
                                 <div className='w-full h-full  absolute flex flex-row  items-center z-[1] opacity-80' >
-                                    <img src={user?.avtar?user?.avtar.avtar:profile} alt="" className="md:w-[150px] md:h-[150px] w-[120px] h-[120px] rounded-full bg-white/50 ml-[22px] mb-1" />
+                                    <img src={user?.avtar?user?.avtar.avtar:profile} alt="" className="md:w-[120px] md:h-[120px] w-[120px] h-[120px] rounded-full bg-white/50 ml-[22px] mb-1" />
                                     <div className="w-6/12 h-full flex flex-col justify-center ml-5">
                                         <h1 className="font-bold font-serif text-4xl text-white">{user?.name}</h1>
                                         <h1 className="font-bold font-serif text-xl text-white/60">{user?.email}</h1>

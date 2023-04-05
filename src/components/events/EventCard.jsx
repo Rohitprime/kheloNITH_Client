@@ -1,7 +1,5 @@
 
-import profile from '../../assets/profile.jpg'
-import price from '../../assets/bg/price1.png'
-import profile1 from '../../assets/dummy/captain.png'
+const profile1 = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'

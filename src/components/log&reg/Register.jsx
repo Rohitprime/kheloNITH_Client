@@ -72,7 +72,7 @@ const Register = () => {
             return;
           }
        
-         dispatch(notificationAction.setFunction({functionMessage:'Registering...'}))
+         dispatch(notificationAction.setFunction({functionMessage:'Registering'}))
          try {
              const res =await axios.post(`${backendURl}/kheloNITH/register`,user)
             

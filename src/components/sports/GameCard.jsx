@@ -2,7 +2,7 @@
 import { BsFillPersonPlusFill } from 'react-icons/bs'
 const playerPng ='https://res.cloudinary.com/diszakm5s/image/upload/v1680701313/kheloNIT/dummy/player_waaj5n.png' 
 const captain = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
-import { Link,NavLink } from 'react-router-dom'
+import { Link,NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import {notificationAction} from '../../store/notfications'
@@ -14,7 +14,7 @@ const GameCard = ({ team }) => {
     const players = team?.players?.slice(0, nop / 2 )
     const players2 = team?.players?.slice(nop / 2 )
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const applyHandler = async(id)=>{
 
        
@@ -22,11 +22,16 @@ const GameCard = ({ team }) => {
           dispatch(notificationAction.setFunction({functionMessage:`sending your request to ${team?.teamLeader?.name}`}))
           const token = localStorage.getItem('token')
           const res = await  axios.post(`${backendURl}/kheloNITH/notifications/team/apply`,{token,id})
-          if(res.data.error){
-            dispatch(notificationAction.setNotification({type:'error',message:res.data.error}))
+          if(res.data.error === 'jwt must be provided'){
+            dispatch(notificationAction.setNotification({type:'error',message:'please Login first !'}))
             dispatch(notificationAction.setDontFunction())
-            return
-          }
+            return navigate('/login')
+         }
+         else if(res.data.error){
+           dispatch(notificationAction.setDontFunction())
+           dispatch(notificationAction.setNotification({type:'error',message:'something went wrong! Please try again'}))
+           return   
+         }
          dispatch(notificationAction.setNotification({type:'success',message:res.data.message}))
          dispatch(notificationAction.setDontFunction())
 

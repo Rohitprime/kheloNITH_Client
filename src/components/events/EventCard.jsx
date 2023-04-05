@@ -1,6 +1,6 @@
 
 const profile1 = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { notificationAction } from '../../store/notfications'
@@ -10,6 +10,7 @@ const EventCard = ({ event }) => {
 
 
    const dispatch = useDispatch()
+   const navigate = useNavigate()
    
    const applyHandler = async(e)=>{
     
@@ -18,10 +19,15 @@ const EventCard = ({ event }) => {
       try {
           const token = await localStorage.getItem('token')
           const res =await axios.post(`${backendURl}/kheloNITH/notifications/event/apply`,{id:name,token})
-          if(res.data.error){
-             dispatch(notificationAction.setNotification({type:'error',message:res.data.error}))
+          if(res.data.error === 'jwt must be provided'){
+             dispatch(notificationAction.setNotification({type:'error',message:'please Login first !'}))
              dispatch(notificationAction.setDontFunction())
-             return 
+             return navigate('/login')
+          }
+          else if(res.data.error){
+            dispatch(notificationAction.setDontFunction())
+            dispatch(notificationAction.setNotification({type:'error',message:'something went wrong! Please try again'}))
+            return   
           }
           dispatch(notificationAction.setNotification({type:'success',message:res.data.message}))
           dispatch(notificationAction.setDontFunction())

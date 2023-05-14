@@ -12,7 +12,7 @@ const Register = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [user,setUser]= useState({name:'',email:'',password:'',number:'',avtar:'',description:'',gameChoise:[],masterOf:''})
-    const[userError,setUserError] = useState({ename:false,eemail:false,epassword:false,enumber:false})
+    const[userError,setUserError] = useState({ename:false,eemail:false,epassword:false,enumber:false,eMasterOf:false})
     const [choise,setChoise] = useState([])
 
     const nameHandler =(e)=>{ 
@@ -69,6 +69,7 @@ const Register = () => {
     }
 
     const masterOfHandler = (e)=>{
+        setUserError({...userError,eMasterOf:false})
           console.log(e.target.value)
           setUser({...user,masterOf:e.target.value})
           console.log(user)
@@ -96,7 +97,11 @@ const Register = () => {
             return;
           }
 
-          console.log(user)
+        if(user.masterOf === ''){
+            setUserError({...userError,eMasterOf:true})
+            return;
+        }
+        
        
          dispatch(notificationAction.setFunction({functionMessage:'Registering'}))
          try {
@@ -155,7 +160,7 @@ const Register = () => {
                          font-bold text-2xl `}  placeholder={`Profile Image`} 
                         onChange={avtarHandler} accept='.jpeg,.jpg,.png' name='avtar' id='avtar'/>
                    </div>
-                   <fieldset className='w-11/12 md:w-9/12 border-4 mt-5 flex flex-row p-3 shadow-lg '>
+                   <fieldset className={`w-11/12 md:w-9/12 border-4 mt-5 flex flex-row p-3 shadow-lg ${userError.eMasterOf && 'border-4 border-rose-900'}`} >
                      <legend className='text-white font-bold text-2xl'>Master of</legend>
                     <div className=' w-6/12 flex flex-col justify-center text-white text-lg font-bold gap-2'>
                         <div><input type='radio' name='master of' onChange={masterOfHandler} value='Cricket'/>  Cricket</div>

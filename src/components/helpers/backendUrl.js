@@ -1,8 +1,8 @@
 
-const backendURl =  'https://khelonith-server-yyca.onrender.com'
+// const backendURl =  'https://khelonith-server-yyca.onrender.com'
 
 
-// 'http://localhost:3000'
+const backendURl =  'http://localhost:3000'
 
 
 export default backendURl

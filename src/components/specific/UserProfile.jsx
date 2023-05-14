@@ -5,21 +5,29 @@ const profile = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/k
 import Navbar from "../navbar/Navbar"
 import { Link } from "react-router-dom"
 import backendURl from "../helpers/backendUrl"
+import { notificationAction } from "../../store/notfications"
+import { useDispatch } from "react-redux"
+
 
 const UserProfile = () => {
 
     const { id } = useParams()
 
     const [user, setUser] = useState({})
+    const dispatch = useDispatch()
 
     useEffect(() => {
 
+        dispatch(notificationAction.setFunction({functionMessage:''}))
         axios.get(`${backendURl}/kheloNITH/specific/oneUser/${id}`)
             .then((res) => {
                 setUser(res.data.user)
+                dispatch(notificationAction.setDontFunction())
             })
             .catch((e) => {
                 console.log(e.message)
+                dispatch(notificationAction.setNotification({ type: 'error', message: res.data.error }))
+                dispatch(notificationAction.setDontFunction())
             })
 
     }, [id])
@@ -42,6 +50,18 @@ const UserProfile = () => {
                         <h1 className="text-white flex flex-wrap justify-center font-mono font-bold text-lg">{user.description}</h1>
                     </div>
                 </div>
+
+                <fieldset className="w-full p-5 bg-white/10 relative animate-slidedown flex flex-wrap text-white font-bold
+                         border justify-around items-center gap-2">
+                         <legend className="text-xl">Favourite Sports</legend>
+                          {
+                            user?.gameChoise && user?.gameChoise.map((choise)=>(
+                                  <h1>{choise}</h1>
+                            ))
+                          }
+                        </fieldset>
+
+
 
                 <div>
                        <div className="w-full bg-white/10 flex flex-col justify-center items-center text-[#ffffff] md:p-5 text-lg font-mono font-bold
@@ -70,11 +90,11 @@ const UserProfile = () => {
                 </div>
 
                 <div className="w-full bg-white/10 flex flex-col items-center opacity-80  pt-8 gap-4 pb-8 animate-slideup">
-                    <h1 className="text-white font-bold text-5xl font-serif">Created Teams</h1>
+                    <h1 className="text-white font-bold text-3xl md:text-5xl font-serif">Created Teams</h1>
                     {user?.createdTeams?.length == 0 && <h1 className="text-white/80 font-bold text-2xl">Nothing yet</h1>}
                     {user?.createdTeams?.map(team =>
-                        <Link to={`/specific/oneTeam/${team?._id}`} className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg flex-none flex justify-around items-center
-                            " key={team._id}>
+                        <Link to={`/specific/oneTeam/${team?._id}`} className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg flex-none 
+                        flex md:flex-row flex-col justify-center md:justify-around items-center" key={team._id}>
                             <Link to={`/specific/oneTeam/${team._id}`} className="font-bold text-2xl text-white font-serif
                                          hover:bg-[#de7bfc] px-2 rounded-lg">{team?.teamName}
                             </Link>
@@ -84,23 +104,25 @@ const UserProfile = () => {
                 </div>
 
                 <div className="w-full bg-white/10 flex flex-col items-center opacity-80  pt-8 gap-4 pb-8 animate-slideup">
-                    <h1 className="text-white font-bold text-5xl font-serif">Teams Joined</h1>
+                    <h1 className="text-white font-bold text-3xl md:text-5xl font-serif">Teams Joined</h1>
                     {user?.inTeams?.length == 0 && <h1 className="text-white/80 font-bold text-2xl">No Team Joined Yet</h1>}
                     {user?.inTeams?.map(inTeam =>
-                        <Link to={`/specific/oneTeam/${inTeam?._id}`} className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg flex-none flex justify-around items-center" key={inTeam._id}>
-                            <Link to={`/specific/oneTeam/${inTeam._id}`} className="font-bold text-2xl text-white font-serif
+                        <Link to={`/specific/oneTeam/${inTeam?._id}`} className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg 
+                        flex-none flex md:flex-row flex-col justify-center md:justify-around items-center" key={inTeam._id}>
+                            <Link to={`/specific/oneTeam/${inTeam._id}`} className="font-mono text-2xl text-white font-bold
                                          hover:bg-[#de7bfc] px-2 rounded-lg">{inTeam?.teamName}
                             </Link>
-                            <h1 className="font-bold text-2xl text-white font-serif">{inTeam?.type}</h1>
-                            <h1 className="font-bold text-2xl text-white font-serif">{inTeam?.date}</h1>
+                            <h1 className="font-bold text-xl text-white font-serif">{inTeam?.type}</h1>
+                            <h1 className="font-bold text-xl text-white font-serif">{inTeam?.date}</h1>
                         </Link>)}
                 </div>
 
                 <div className="w-full bg-white/10 flex flex-col items-center opacity-80  pt-8 gap-4 pb-8 animate-slideup">
-                    <h1 className="text-white font-bold text-5xl font-serif">Events Created</h1>
+                    <h1 className="text-white font-bold text-3xl md:text-5xl font-serif">Events Created</h1>
                     {user?.events?.length == 0 && <h1 className="text-white/80 font-bold text-2xl">No Events Created Yet</h1>}
                     {user?.events?.map(event =>
-                        <div className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg flex-none flex justify-around items-center" key={event._id}>
+                        <div className="w-full md:w-10/12 h-[100px] bg-[#32104b] rounded-lg flex-none 
+                        flex md:flex-row flex-col justify-center md:justify-around items-center" key={event._id}>
                             <Link to={`/specific/oneEvent/${event._id}`} className="font-bold text-2xl text-white font-serif
                                          hover:bg-[#de7bfc] px-2 rounded-lg">{event?.type}
                             </Link>

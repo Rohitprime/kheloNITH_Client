@@ -84,6 +84,16 @@ const ProfileLayout = () => {
                             </div>
                         </div>
 
+                        <fieldset className="w-full p-5 bg-white/10 relative animate-slidedown flex flex-wrap text-white font-bold
+                         border justify-around items-center gap-2">
+                         <legend className="text-xl">Fabourite Sports</legend>
+                          {
+                            user?.gameChoise && user?.gameChoise.map((choise)=>(
+                                  <h1>{choise}</h1>
+                            ))
+                          }
+                        </fieldset>
+
                      {/* Progress bars */}
                     
                         <div className="w-full bg-white/10 flex flex-col justify-center items-center text-[#ffffff] p-2 text-lg font-mono font-bold

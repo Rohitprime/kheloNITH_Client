@@ -31,7 +31,7 @@ const Navbar = ()=>{
          <Link  to='/'><img src={nithLogo} className="w-[60px] h-[60px] cursor-pointer hover:scale-105"/></Link>
         </div>
         <div className="w-full md:w-10/12 h-full flex flex-col md:flex-row gap-4">
-           <div className='w-full md:w-9/12 flex flex-row justify-center gap-10 items-center '>
+           <div className='w-full md:w-9/12 flex flex-row justify-center gap-5 items-center '>
             <NavLink to='/sports'>
               <h1 className='text-white text-2xl md:text-[28px] font-serif font-bold px-4 
                 cursor-pointer hover:mb-2 hover:scale-105'>Sports</h1>
@@ -39,7 +39,9 @@ const Navbar = ()=>{
               <NavLink to='/events'><h1 className='text-white text-2xl md:text-[28px] font-serif font-bold px-4 
                 cursor-pointer hover:mb-2 hover:scale-105'>Events</h1>
               </NavLink>
-             
+              <NavLink to='/allPlayers'><h1 className='text-white text-2xl md:text-[28px] font-serif font-bold px-4 
+                cursor-pointer hover:mb-2 hover:scale-105'>All Players</h1>
+              </NavLink> 
            </div>
            <div className='w-full md:w-3/12 flex flex-row items-center justify-center gap-4 md:pb-0 pb-3'>
              { !login && <NavLink to='/login'><h1 className='text-3xl md:text-[25px] bg-white rounded-xl px-4 cursor-pointer opacity-70 font-serif 

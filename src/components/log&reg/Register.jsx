@@ -11,8 +11,9 @@ const Register = () => {
     
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [user,setUser]= useState({name:'',email:'',password:'',number:'',avtar:'',description:''})
+    const [user,setUser]= useState({name:'',email:'',password:'',number:'',avtar:'',description:'',gameChoise:[]})
     const[userError,setUserError] = useState({ename:false,eemail:false,epassword:false,enumber:false})
+    const [choise,setChoise] = useState([])
 
     const nameHandler =(e)=>{ 
        setUserError({...userError,ename:false})
@@ -49,6 +50,24 @@ const Register = () => {
         setUser({...user,avtar:avtarUrl})
     }
 
+    const gameChoiseHandler =(e)=>{
+       
+        console.log(e.target.checked)
+        if(e.target.checked){
+            choise.push(e.target.value)
+        }
+        let arr = new Set(choise);
+        if(e.target.checked == false){
+           arr.delete(e.target.value)
+        }
+        console.log('set',arr)
+        setChoise(Array.from(arr))
+        console.log('after push ', choise)
+        setUser({...user,gameChoise:choise})
+        console.log(user.gameChoise)
+
+    }
+
 
 
     const submintHandler = async(e)=>{
@@ -71,6 +90,8 @@ const Register = () => {
             setUserError({...userError,enumber:true})
             return;
           }
+
+          console.log(user)
        
          dispatch(notificationAction.setFunction({functionMessage:'Registering'}))
          try {
@@ -94,11 +115,11 @@ const Register = () => {
 
     return (
         <div className='relative overflow-y-scroll w-screen h-screen scrollbar-hide'>
-            <div className="w-full h-full bg-gradient-to-b from-[#1e092d] to-black flex justify-center items-center absolute">
-                {/* <img src={bg} className="w-0 sm:w-full sm:h-full" /> */}
-            </div>
+            {/* <div className="w-full h-full bg-gradient-to-b from-[#1e092d] to-black flex justify-center items-center absolute">
+                <img src={bg} className="w-0 sm:w-full sm:h-full" />
+            </div> */}
             <div className='w-full h-full  absolute flex flex-col md:justify-center items-center z-[1] backdrop-blur-sm opacity-90
-            bg-gradient-to-b from-[#200133] to-black md:mt-0 mt-[135px]' >
+            bg-gradient-to-b from-[#200133] to-black md:mt-[80px] mt-[135px]' >
 
             <form className='w-11/12 md:w-5/12  bg-gradient-to-b from-[#dfb2f3] to-[#423344] backdrop-blur-2xl rounded-3xl mt-[50px] 
                 animate-slideup flex flex-col items-center shadow-2xl' onSubmit={submintHandler}>
@@ -132,7 +153,23 @@ const Register = () => {
                          font-bold text-2xl `}  placeholder={`Profile Image`} 
                         onChange={avtarHandler} accept='.jpeg,.jpg,.png' name='avtar' id='avtar'/>
                    </div>
-                    <button type='submit' className='w-4/12 h-[55px] rounded-xl my-[40px] text-center bg-gradient-to-br from-[#d372f9] to-[#675576] shadow-xl
+                   <fieldset className='w-11/12 md:w-9/12 border mt-5 flex flex-row p-3'>
+                     <legend className='text-white font-bold text-2xl'>Chose your fabourite sport</legend>
+                    <div className=' w-6/12 flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='cricket'/>  cricket</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='football'/>  football</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='vollyball'/>  vollyball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='badminton'/>  badminton</div>
+                    </div>
+
+                    <div className='w-6/12 h-[150px] flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='tennis'/> tennis</div> 
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='basketball'/> basketball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='chess'/> chess</div>
+                    </div>
+
+                   </fieldset>
+                    <button type='submit' className='w-4/12 h-[55px] rounded-xl my-[20px] text-center bg-gradient-to-br from-[#d372f9] to-[#675576] shadow-xl
                      font-bold text-xl text-white hover:scale-105' >submit</button>
 
                 </form>

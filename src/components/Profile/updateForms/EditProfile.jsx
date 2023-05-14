@@ -13,6 +13,8 @@ const EditProfile = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [user,setUser]= useState({...presentUser})
+    const [choise,setChoise] = useState([])
+
     const[userError,setUserError] = useState({ename:false,enumber:false})
    
 
@@ -39,6 +41,24 @@ const EditProfile = () => {
         const file = files[0]
         const avtarUrl = await converToBase64(file)
         setUser({...user,newAvtar:avtarUrl})
+    }
+
+    const gameChoiseHandler =(e)=>{
+       
+        console.log(e.target.checked)
+        if(e.target.checked){
+            choise.push(e.target.value)
+        }
+        let arr = new Set(choise);
+        if(e.target.checked == false){
+           arr.delete(e.target.value)
+        }
+        console.log('set',arr)
+        setChoise(Array.from(arr))
+        console.log('after push ', choise)
+        setUser({...user,gameChoise:choise})
+        console.log(user.gameChoise)
+
     }
 
     const submintHandler = async(e)=>{
@@ -99,6 +119,23 @@ const EditProfile = () => {
                     <input type='file' className={`w-9/12 h-[55px] mt-[40px] text-white text-start placeholder-[#031732] bg-transparent shadow-xl focus:outline-none
                      border-b-[5px] font-bold text-2xl ${userError.enumber && 'border-b-8 border-b-rose-900 placeholder-rose-900'}`}  
                      onChange={avtarHandler} accept='.jpeg,.jpg,.png' name='avtar'/>
+
+                <fieldset className='w-11/12 md:w-9/12 border mt-5 flex flex-row p-3'>
+                     <legend className='text-white font-bold text-2xl'>Chose your fabourite sport</legend>
+                    <div className=' w-6/12 flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='cricket'/>  cricket</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='football'/>  football</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='vollyball'/>  vollyball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='badminton'/>  badminton</div>
+                    </div>
+
+                    <div className='w-6/12 h-[150px] flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='tennis'/> tennis</div> 
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='basketball'/> basketball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='chess'/> chess</div>
+                    </div>
+
+                   </fieldset>
 
                     <button type='submit' className='w-4/12 h-[55px] rounded-xl my-[40px] text-center bg-gradient-to-br  from-[#cf83ff] to-[#6f118c] shadow-2xl
                      font-bold text-xl text-white hover:scale-105' >submit</button>

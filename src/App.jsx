@@ -15,6 +15,7 @@ import OneTeam from "./components/specific/OneTeam"
 import OneEvent from "./components/specific/OneEvent"
 import Genral from "./components/Profile/genral/Genral"
 import UpdateSection from "./components/Profile/UpdateSection"
+import AllPlayers from "./components/allPlayers/AllPlayers"
 
 
 const App = ()=>{
@@ -45,6 +46,10 @@ const App = ()=>{
           element:<SportMain/>
         },
       ]
+    },
+    {
+      path:'allPlayers',
+      element:<AllPlayers/>
     },
     {
       path:'/profile',

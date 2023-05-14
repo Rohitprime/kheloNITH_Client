@@ -61,6 +61,12 @@ const EditProfile = () => {
 
     }
 
+    const masterOfHandler = (e)=>{
+        console.log(e.target.value)
+        setUser({...user,masterOf:e.target.value})
+        console.log(user)
+  }
+
     const submintHandler = async(e)=>{
          e.preventDefault()
        
@@ -119,6 +125,22 @@ const EditProfile = () => {
                     <input type='file' className={`w-9/12 h-[55px] mt-[40px] text-white text-start placeholder-[#031732] bg-transparent shadow-xl focus:outline-none
                      border-b-[5px] font-bold text-2xl ${userError.enumber && 'border-b-8 border-b-rose-900 placeholder-rose-900'}`}  
                      onChange={avtarHandler} accept='.jpeg,.jpg,.png' name='avtar'/>
+
+                <fieldset className='w-11/12 md:w-9/12 border-4 mt-5 flex flex-row p-3 shadow-lg '>
+                     <legend className='text-white font-bold text-2xl'>Master of</legend>
+                    <div className=' w-6/12 flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Cricket'/>  Cricket</div>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Football'/>  Football</div>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Volleyball'/> Volleyball</div>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Badminton'/> Badminton</div>
+                    </div>
+
+                    <div className='w-6/12 h-[150px] flex flex-col justify-center text-white text-lg font-bold gap-2'>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Tennis'/> Tennis</div> 
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Basketball'/> Basketball</div>
+                        <div><input type='radio' name='master of' onChange={masterOfHandler} value='Chess'/> Chess</div>
+                    </div>
+                   </fieldset>
 
                 <fieldset className='w-11/12 md:w-9/12 border-4 mt-5 flex flex-row p-3 shadow-2xl'>
                      <legend className='text-white font-bold text-2xl'>Choose your favourite sport(s)</legend>

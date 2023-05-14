@@ -102,13 +102,13 @@ const CreateEvents = () => {
                     <select type='' className={`w-9/12 h-[55px]  mt-[10px] text-start shadow-xl font-bold text-2xl focus:outline-none
                     border-b-[5px] text-black bg-transparent  ${eventError.etype && 'border-b-8 border-b-rose-900 placeholder-rose-900'}`} placeholder='Name'
                         onChange={typeHandler}>
-                        <option value='cricket' className=' bg-[#c98bf5]' >cricket</option>
-                        <option value='football' className=' bg-[#c98bf5]'>football</option>
-                        <option value='chess' className=' bg-[#c98bf5]'>chess</option>
-                        <option value='vollyball' className=' bg-[#c98bf5]' >vollyball</option>
-                        <option value='tennis' className=' bg-[#c98bf5]' >tennis</option>
-                        <option value='basketball' className=' bg-[#c98bf5]' >basketball</option>
-                        <option value='badminton' className=' bg-[#c98bf5]' >badminton</option>
+                        <option value='cricket' className=' bg-[#c98bf5]' >Cricket</option>
+                        <option value='football' className=' bg-[#c98bf5]'>Football</option>
+                        <option value='chess' className=' bg-[#c98bf5]'>Chess</option>
+                        <option value='vollyball' className=' bg-[#c98bf5]' >Volleyball</option>
+                        <option value='tennis' className=' bg-[#c98bf5]' >Tennis</option>
+                        <option value='basketball' className=' bg-[#c98bf5]' >Basketball</option>
+                        <option value='badminton' className=' bg-[#c98bf5]' >Badminton</option>
                     </select>
 
                     <input type='date' className={`w-9/12 h-[55px]  mt-[10px] text-start shadow-xl font-bold text-2xl focus:outline-none

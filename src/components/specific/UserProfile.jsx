@@ -54,6 +54,14 @@ const UserProfile = () => {
                         <h1 className="text-white flex flex-wrap justify-center font-mono font-bold text-lg">{user.description}</h1>
                     </div>
                 </div>
+                
+                <fieldset className="w-full p-5 bg-white/10 relative animate-slidedown flex flex-wrap text-white font-bold
+                         border justify-around items-center gap-2">
+                         <legend className="text-xl">Master Of</legend>
+                          {
+                            user?.masterOf
+                          }
+                        </fieldset>
 
                 <fieldset className="w-full p-5 bg-white/10 relative animate-slidedown flex flex-wrap text-white font-bold
                          border justify-around items-center gap-2">

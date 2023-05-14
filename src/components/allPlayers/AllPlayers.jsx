@@ -6,10 +6,12 @@ import backendURl from "../helpers/backendUrl"
 const profile = 'https://res.cloudinary.com/diszakm5s/image/upload/v1680701304/kheloNIT/dummy/captain_zxkxvc.png'
 import { notificationAction } from "../../store/notfications"
 import { useDispatch } from "react-redux"
-import rank1 from '../../assets/test/rank1.png'
-import rank2 from '../../assets/test/rank2.png'
-import rank3 from '../../assets/test/rank3.png'
-import normalRank from '../../assets/test/normalRank.png'
+const rank1 = 'https://res.cloudinary.com/diszakm5s/image/upload/v1684092356/kheloNIT/dummy/rank1_rhjshj.png'
+const rank2  = 'https://res.cloudinary.com/diszakm5s/image/upload/v1684092364/kheloNIT/dummy/rank2_cpeejt.png'
+const rank3  = 'https://res.cloudinary.com/diszakm5s/image/upload/v1684092370/kheloNIT/dummy/rank3_xsogml.png'
+const normalRank = 'https://res.cloudinary.com/diszakm5s/image/upload/v1684092376/kheloNIT/dummy/normalRank_qkgsw4.png'
+const masterOf  = 'https://res.cloudinary.com/diszakm5s/image/upload/v1684092385/kheloNIT/dummy/masterOf_vn9vrn.png'
+
 
 
 
@@ -78,6 +80,12 @@ const AllPlayers = ()=>{
                 <div className="w-full md:w-3/12 h-full  flex items-center justify-center">
                    <h1 className="font-bold text-2xl text-white font-serif
                               px-2 rounded-lg">{player?.email}</h1>
+                </div>
+
+                <div className="w-full md:w-3/12 h-full  flex flex-col items-center justify-center">
+                    <img src={masterOf} className="w-[40px] h-[40px]"/>
+                   <h1 className="font-bold text-3xl text-white font-serif
+                              px-2 rounded-lg">{player?.masterOf}</h1>
                 </div>
 
               </div>   

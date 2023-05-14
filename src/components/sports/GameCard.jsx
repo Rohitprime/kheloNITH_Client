@@ -11,8 +11,9 @@ import backendURl from '../helpers/backendUrl'
 const GameCard = ({ team }) => {
 
     const nop = team?.numberOfPlayers
-    const players = team?.players?.slice(0, nop / 2 )
-    const players2 = team?.players?.slice(nop / 2 )
+
+    const players = team?.players?.slice(0, (nop +1)/ 2 )
+    const players2 = team?.players?.slice((nop+1) / 2 )
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const applyHandler = async(id)=>{

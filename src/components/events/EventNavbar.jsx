@@ -16,22 +16,27 @@ const EventNavbar =()=>{
                 </NavLink>
                 <NavLink to='/events/chess'><div className=" bg-[#b274ff] rounded-b-xl backdrop-blur-lg opacity-75 
                      flex justify-center items-center left-0 z-[1]  w-[220px] md:w-[250px] h-[75px] md:h-[85px] hover:scale-105">
-                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">chess</h1>
+                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">Chess</h1>
                   </div>
                 </NavLink>
                 <NavLink to='/events/vollyball'><div className=" bg-[#b274ff] rounded-b-xl backdrop-blur-lg opacity-75 
                      flex justify-center items-center left-0 z-[1]  w-[220px] md:w-[250px] h-[75px] md:h-[85px] hover:scale-105">
-                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">vollyball</h1>
+                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">Volleyball</h1>
                   </div>
                 </NavLink>
                 <NavLink to='/events/tennis'><div className=" bg-[#b274ff] rounded-b-xl backdrop-blur-lg opacity-75 
                      flex justify-center items-center left-0 z-[1]  w-[220px] md:w-[250px] h-[75px] md:h-[85px] hover:scale-105">
-                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">tennis</h1>
+                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">Tennis</h1>
                   </div>
                 </NavLink>
                 <NavLink to='/events/badminton'><div className=" bg-[#b274ff] rounded-b-xl backdrop-blur-lg opacity-75 
                      flex justify-center items-center left-0 z-[1]  w-[220px] md:w-[250px] h-[75px] md:h-[85px] hover:scale-105">
-                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">badminton</h1>
+                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">Badminton</h1>
+                  </div>
+                </NavLink>
+                <NavLink to='/events/basketball'><div className=" bg-[#b274ff] rounded-b-xl backdrop-blur-lg opacity-75 
+                     flex justify-center items-center left-0 z-[1]  w-[220px] md:w-[250px] h-[75px] md:h-[85px] hover:scale-105">
+                     <h1 className="font-bold text-xl font-mono text-[#fffeff]">BasketBall</h1>
                   </div>
                 </NavLink>
              </div>

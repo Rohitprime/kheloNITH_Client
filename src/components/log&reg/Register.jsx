@@ -148,29 +148,29 @@ const Register = () => {
 
                    <div className='w-11/12 md:w-9/12 flex flex-row  justify-start items-center mt-[40px] border-b-[5px] gap-2'>
                       <label htmlFor='avtar' className='w-4/12 h-[55px] flex justify-center border-r-[2px] text-white font-bold md:text-2xl items-center
-                         '>ProfileImage</label>
+                         '>Profile Image</label>
                     <input type='file' className={`w-9/12 h-[55px]  text-white text-start placeholder-[#031732] bg-transparent shadow-xl focus:outline-none
                          font-bold text-2xl `}  placeholder={`Profile Image`} 
                         onChange={avtarHandler} accept='.jpeg,.jpg,.png' name='avtar' id='avtar'/>
                    </div>
                    <fieldset className='w-11/12 md:w-9/12 border mt-5 flex flex-row p-3'>
-                     <legend className='text-white font-bold text-2xl'>Chose your fabourite sport</legend>
+                     <legend className='text-white font-bold text-2xl'>Chose your favourite sport</legend>
                     <div className=' w-6/12 flex flex-col justify-center text-white text-lg font-bold gap-2'>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='cricket'/>  cricket</div>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='football'/>  football</div>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='vollyball'/>  vollyball</div>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='badminton'/>  badminton</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Cricket'/>  Cricket</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Football'/>  Football</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Volleyball'/> Volleyball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Badminton'/> Badminton</div>
                     </div>
 
                     <div className='w-6/12 h-[150px] flex flex-col justify-center text-white text-lg font-bold gap-2'>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='tennis'/> tennis</div> 
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='basketball'/> basketball</div>
-                        <div><input type='checkbox' onChange={gameChoiseHandler} value='chess'/> chess</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Tennis'/> Tennis</div> 
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Basketball'/> Basketball</div>
+                        <div><input type='checkbox' onChange={gameChoiseHandler} value='Chess'/> Chess</div>
                     </div>
 
                    </fieldset>
                     <button type='submit' className='w-4/12 h-[55px] rounded-xl my-[20px] text-center bg-gradient-to-br from-[#d372f9] to-[#675576] shadow-xl
-                     font-bold text-xl text-white hover:scale-105' >submit</button>
+                     font-bold text-xl text-white hover:scale-105' >Submit</button>
 
                 </form>
             </div>

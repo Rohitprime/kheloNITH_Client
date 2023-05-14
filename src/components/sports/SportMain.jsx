@@ -17,7 +17,7 @@ const SportMain = ()=>{
             <div className="w-full h-full bg-gradient-to-b from-[#5b3675] to-[#4f5c68] flex justify-center items-center absolute">
                {sport=='cricket'&& <img src={cricket} className="w-[700px]  h-[700px]" />}
                {sport=='football'&& <img src={football} className="w-[700px]  h-[700px]" />}
-               {sport=='vollyball'&& <img src={vollyball} className="w-[700px]  h-[700px]" />}
+               {sport=='volleyball'&& <img src={vollyball} className="w-[700px]  h-[700px]" />}
                {sport=='chess'&& <img src={chess} className="w-[700px]  h-[700px]" />}
                {sport=='badminton'&& <img src={badminton} className="w-[700px]  h-[700px]" />}
                {sport=='tennis'&& <img src={tenish} className="w-[700px]  h-[700px]" />}

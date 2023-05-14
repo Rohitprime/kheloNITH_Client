@@ -58,7 +58,7 @@ const ProfileLayout = () => {
     return (
         <>
             <Navbar />
-                <div className="  w-screen h-screen  flex flex-col md:flex-row gap-3 px-4 p-2 mt-[151px] md:mt-[81px] bg-[#210732]
+                <div className="  w-screen h-screen  flex flex-col md:flex-row gap-5 px-4 p-2 mt-[151px] md:mt-[81px] bg-[#210732]
              overflow-y-scroll scrollbar-hide">
                     <div className="w-full md:w-3/12 h-screen  flex flex-col gap-1 ">
                         <div className="bg-gradient-to-br from-[#32104b]">
@@ -90,7 +90,7 @@ const ProfileLayout = () => {
 
                         <fieldset className="w-full p-5 bg-white/10 relative animate-slidedown flex flex-wrap text-white font-bold
                          border justify-around items-center gap-2">
-                         <legend className="text-xl">Fabourite Sports</legend>
+                         <legend className="text-xl">Favourite Sports</legend>
                           {
                             user?.gameChoise && user?.gameChoise.map((choise)=>(
                                   <h1>{choise}</h1>
@@ -139,12 +139,12 @@ const ProfileLayout = () => {
 
                                 <NavLink to='/profile/notifications' className="w-full h-[60px] bg-[#32104b]  rounded-lg flex items-center justify-center
                             hover:bg-[#271237] hover:scale-105">
-                                    <h1 className="font-bold text-2xl text-white font-serif">Event's Notis </h1>
+                                    <h1 className="font-bold text-2xl text-white font-serif">Event's Notice </h1>
                                 </NavLink>
                             
                                 <NavLink to='/profile/teamNotis' className="w-full h-[60px] bg-[#32104b]  rounded-lg flex items-center justify-center
                                 hover:bg-[#271237] hover:scale-105">
-                                    <h1 className="font-bold text-2xl text-white font-serif">Team's Notis </h1>
+                                    <h1 className="font-bold text-2xl text-white font-serif">Team's Notice </h1>
                                 </NavLink>
 
                                 <NavLink to='/profile/createEvents' className="w-full h-[60px] bg-[#32104b]  rounded-lg flex items-center justify-center
@@ -162,7 +162,7 @@ const ProfileLayout = () => {
 
                     </div>
 
-                    <div className="w-full md:w-9/12 h-full flex flex-col animate-slidedown">
+                    <div className="w-full md:w-9/12 h-full flex flex-col animate-slidedown md:mt-[0px] mt-[200px]">
                         <div className='w-full h-full  flex flex-row sm:p-2 z-[1] opacity-80 bg-gradient-to-br from-[#32104b] to-[#2b0a3d]'>
                             <Outlet />
                         </div>

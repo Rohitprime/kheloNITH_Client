@@ -33,7 +33,7 @@ const Sports = () => {
                 <div className="w-screen h-[80px]"></div>
                 <SportCard sport={'cricket'} logo={cricket}/>
                 <SportCard sport={'football'} logo={football} />
-                <SportCard sport={'vollyball'} logo={vollyball} />
+                <SportCard sport={'volleyball'} logo={vollyball} />
                 <SportCard sport={'badminton'} logo={badminton} />
                 <SportCard sport={'tennis'} logo={tenish} />
                 <SportCard sport={'basketball'} logo={basketball} />

@@ -30,7 +30,7 @@ const Genral = () => {
                 <div className="w-9/12 md:w-3/12 h-[300px] p-2 rounded-2xl bg-[#cd95f5] opacity-90 flex flex-col justify-center items-center
                   hover:scale-105 cursor-pointer"   onClick={eventsHandler}>
                     <img src={events} alt="" className="w-full rounded-2xl  h-[250px]" />
-                    <h1 className="font-bold font-serif text-3xl text-gray-700 ]">Crated Events</h1>
+                    <h1 className="font-bold font-serif text-3xl text-gray-700 ]">Created Events</h1>
                 </div>
                 <div className="w-9/12 md:w-3/12 h-[300px] p-2  rounded-2xl bg-[#cd95f5] opacity-90 flex flex-col justify-center items-center 
                    hover:scale-105 cursor-pointer"  onClick={teamHandler}>
@@ -49,7 +49,7 @@ const Genral = () => {
 
 
                 <div className='w-full flex flex-col justify-center items-center gap-6 mt-3 overflow-y-scroll scrollbar-hide'>
-                    <h1 className='text-white/80 font-bold text-xl my-2'>All Your Event</h1>
+                    <h1 className='text-white/80 font-bold text-4xl my-2 font-serif'>All Events</h1>
                     {user?.events?.length == 0 && <h1 className="text-white/70 text-2xl text-center font-medium font-serif
                         animate-slideup">No Event created Yet</h1>}
                     <div className='w-full  animate-slideup md:h-screen overflow-y-scroll bg-[#7d5991] p-4 flex flex-col items-center gap-4 scrollbar-hide'>
@@ -65,7 +65,7 @@ const Genral = () => {
 
                 {genral.oteam &&
                 <>
-                    <div className='w-full h-[100px]  text-center font-bold text-4xl text-white/80 font-serif'>All Your Teams</div>
+                    <div className='w-full h-[100px]  text-center font-bold text-4xl text-white/80 font-serif'>All Teams</div>
                     {user?.createdTeams?.length == 0 && <h1 className="text-white/70 text-2xl text-center font-medium font-serif
                     animate-slideup">No Team created Yet</h1>}
                     <div className='w-full  animate-slideup md:h-screen overflow-y-scroll bg-[#7d5991] p-4 flex flex-col items-center gap-4

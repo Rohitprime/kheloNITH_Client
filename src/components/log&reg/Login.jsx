@@ -35,7 +35,7 @@ const Login = () => {
             setUserError({...userError,epassword:true})
             return
          }
-         dispatch(notificationAction.setFunction({functionMessage:'Logining'}))
+         dispatch(notificationAction.setFunction({functionMessage:'Ready-to-Play'}))
          try {
              const res =await axios.post(`${backendURl}/kheloNITH/login`,user)
              if(res.data.error){

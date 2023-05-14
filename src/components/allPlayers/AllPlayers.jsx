@@ -25,7 +25,7 @@ const AllPlayers = ()=>{
             })
             .catch((e) => {
                 console.log(e.message)
-                dispatch(notificationAction.setNotification({ type: 'error', message: res.data.error }))
+                dispatch(notificationAction.setNotification({ type: 'error', message:'somthing went wrong :(' }))
                 dispatch(notificationAction.setDontFunction())
             })
 

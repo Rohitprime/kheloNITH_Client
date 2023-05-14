@@ -38,13 +38,17 @@ const UserProfile = () => {
              overflow-y-scroll pt-10 scrollbar-hide">
 
                 <div className=' bg-white/10  opacity-80 p-2 animate-slideup'>
-                    <div className="w-full h-[200px] flex flex-row  items-center justify-center">
+                    <div className="w-full h-[200px] flex flex-row  items-center justify-center gap-4">
                         <img src={user?.avtar?user?.avtar.avtar:profile} alt="" className="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-full bg-white/50
                             border-2 border-[#d178f5]" />
-                        <div className="w-full md:w-2/12 h-full flex flex-col items-center justify-center">
+                        <fieldset className="w-full md:w-2/12  p-2 flex flex-col items-center justify-center relative border-t-2">
+                            <legend className=" p-2 border-2 border-[#d178f5] rounded-md top-5 right-0 flex justify-center items-center
+                            font-bold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#ecbe19] to-[#fc5644]">
+                                123
+                            </legend>
                             <h1 className="font-bold font-serif md:text-5xl text-3xl text-white">{user?.name}</h1>
                             <h1 className="font-bold font-serif text-xl text-white/60">{user?.email}</h1>
-                        </div>
+                        </fieldset>
                     </div>
                     <div className="w-full pb-5 px-4 ">
                         <h1 className="text-white flex flex-wrap justify-center font-mono font-bold text-lg">{user.description}</h1>

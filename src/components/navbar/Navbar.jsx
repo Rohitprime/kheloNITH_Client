@@ -40,7 +40,7 @@ const Navbar = ()=>{
                 cursor-pointer hover:mb-2 hover:scale-105'>Events</h1>
               </NavLink>
               <NavLink to='/allPlayers'><h1 className='text-white text-2xl md:text-[28px] font-serif font-bold px-4 
-                cursor-pointer hover:mb-2 hover:scale-105'>All Players</h1>
+                cursor-pointer hover:mb-2 hover:scale-105'>Players</h1>
               </NavLink> 
            </div>
            <div className='w-full md:w-3/12 flex flex-row items-center justify-center gap-4 md:pb-0 pb-3'>

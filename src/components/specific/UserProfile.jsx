@@ -26,7 +26,7 @@ const UserProfile = () => {
             })
             .catch((e) => {
                 console.log(e.message)
-                dispatch(notificationAction.setNotification({ type: 'error', message: res.data.error }))
+                dispatch(notificationAction.setNotification({ type: 'error', message:'something went wrong !' }))
                 dispatch(notificationAction.setDontFunction())
             })
 
@@ -41,10 +41,10 @@ const UserProfile = () => {
                     <div className="w-full h-[200px] flex flex-row  items-center justify-center gap-4">
                         <img src={user?.avtar?user?.avtar.avtar:profile} alt="" className="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-full bg-white/50
                             border-2 border-[#d178f5]" />
-                        <fieldset className="w-full md:w-2/12  p-2 flex flex-col items-center justify-center relative border-t-2">
+                        <fieldset className="w-full md:w-2/12  p-2 flex flex-col items-center justify-center relative border-t-2 border-[#d178f5]">
                             <legend className=" p-2 border-2 border-[#d178f5] rounded-md top-5 right-0 flex justify-center items-center
                             font-bold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#ecbe19] to-[#fc5644]">
-                                123
+                                {user?.rank}
                             </legend>
                             <h1 className="font-bold font-serif md:text-5xl text-3xl text-white">{user?.name}</h1>
                             <h1 className="font-bold font-serif text-xl text-white/60">{user?.email}</h1>
